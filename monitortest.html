@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 14%;
+      padding: 10px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    #blacksmear{
+      background-color: #000000;
+      color: #777777;
+    }
+
+    #plain {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    #blackongrey {
+      background-color: #777777;
+      color: #000000;
+    }
+
+    #greyongreya {
+      background-color: #333333;
+      color: #777777;
+    }
+
+    #greyongreyb {
+      background-color: #777777;
+      color: #333333;
+    }
+
+    #greyonwhite {
+      background-color: #ffffff;
+      color: #777777;
+    }
+
+    #blackshadow {
+      background-color: #333333;
+      color: #ffffff;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div id="blacksmear" class="column"></div>
+      <div id="plain" class="column"> </div>
+      <div id="blackongrey" class="column"></div>
+      <div id="greyongreya" class="column"></div>
+      <div id="greyongreyb" class="column"></div>
+      <div id="greyonwhite" class="column"></div>
+      <div id="blackshadow" class="column"></div>
+    </div>
+    <script>
+      const content = `██████████ An so vulgar to on points wanted. Not rapturous resolving continued household northward gay. He it otherwise supported instantly. Unfeeling agreeable suffering it on smallness newspaper be. So come must time no as. Do on unpleasing possession as of unreserved. Yet joy exquisite put sometimes enjoyment perpetual now. Behind lovers eat having length horses vanity say had its. ██████████`
+      const cols = document.getElementsByClassName("column");
+      for (let i = 0; i < 200; i++) {
+        for (let j = 0; j < cols.length; j++) {
+          const para = document.createElement("p");
+          const br = document.createElement("br");
+          const node = document.createTextNode(content);
+          const image = new Image();
+          image.src = 'colours.svg';
+          image.width = 120;
+          para.appendChild(node);
+          cols[j].appendChild(para);
+          cols[j].appendChild(br);
+          cols[j].appendChild(image);
+          cols[j].appendChild(br);
+        }
+      }
+    </script>
+  </body>
+</html>
